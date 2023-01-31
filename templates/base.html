@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} Schmidt's Portfolio {% endblock %}</title>
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"
+</head>
+<body class="font-mono text-white bg-slate-800">
+  
+  <header class="hidden fixed w-2/3 top-8 left-2/4 -translate-x-1/2 md:flex justify-between items-center py-4 px-2 bg-gray-600 rounded-lg z-10">
+    <div>
+      <a class="px-4 py-2 rounded-lg animate-text hover:bg-white hover:text-slate-800" href="{% url 'home' %}" data-value="schmidt">schmidt</a>
+    </div>
+    <nav class="flex justify-end items-center">
+      <a class="px-4 py-2 rounded-lg animate-text hover:bg-white hover:text-slate-800" href="{% url 'home' %}" data-value="home">home</a>
+      <a class="px-4 py-2 rounded-lg animate-text hover:bg-white hover:text-slate-800" href="/blog" data-value="blog">blog</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <script src="{% static 'js/nav.js' %}"></script>
+</body>
+</html>
